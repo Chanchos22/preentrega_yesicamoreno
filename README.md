@@ -20,7 +20,7 @@ Interacción con Carrito: Adición de un producto al carrito y verificación de 
 
 3- Cómo Ejecutar las Pruebas Para ejecutar la suite completa de pruebas y generar el reporte final, usa el siguiente comando. Este comando le indica a Pytest que debe buscar los tests en la carpeta y archivo especificados.
 
-4- Ejecutar los Tests y Generar Reporte Ejecuta el comando desde la carpeta principal (Entrega-automation-proyecto): py -m pytest -v --html=pre-entrega/reports/reporte.html pre-entrega/tests/test_saucedemo.py
+4- Ejecutar los Tests y Generar Reporte Ejecuta el comando desde la carpeta principal (Entrega-automation-proyecto): pytest --html=report.html --self-contained-html -v
 
 5- Detalles del Comando -v: (Verbose) Muestra el nombre de cada prueba mientras se ejecuta. --html=...: Genera el reporte HTML y especifica la ruta donde guardarlo. pre-entrega/tests/test_saucedemo.py: Ruta del archivo de prueba a ejecutar.
 
