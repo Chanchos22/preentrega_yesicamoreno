@@ -5,7 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-
+from utils import perform_login, is_element_present
+from utils import login
 
 @pytest.fixture
 def driver():
@@ -13,11 +14,9 @@ def driver():
     chrome_opt.add_argument("--incognito")
     chrome_opt.add_argument("--disable-popup-blocking")
     driver = webdriver.Chrome(options=chrome_opt)
-    driver.maximize_window()  # ✅ Maximiza la ventana
+    driver.maximize_window()
     yield driver
     driver.quit()
-
-
 
 def test_cart_flow(driver):
     driver.get("https://www.saucedemo.com/")
@@ -32,18 +31,14 @@ def test_cart_flow(driver):
     WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.CLASS_NAME, "inventory_item"))
     )
-
-    # Esperar un poco más para asegurar carga visual (mantengo el tuyo)
     time.sleep(1.5)
 
     # Localizar el botón del producto "Sauce Labs Backpack"
     add_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack"))
     )
-
-    # Desplazar hasta el botón
     driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", add_button)
-    time.sleep(1.5)  # Lo bajo a 1.5 para un efecto más natural
+    time.sleep(1.5)
 
     try:
         add_button.click()
@@ -52,7 +47,6 @@ def test_cart_flow(driver):
         driver.execute_script("arguments[0].click();", add_button)
         print("⚡ Click con JavaScript ejecutado")
 
-    # Esperar para que se vea el cambio visual al agregar al carrito
     time.sleep(2)
 
     # --- VALIDAR CARRITO ---
@@ -60,14 +54,10 @@ def test_cart_flow(driver):
         EC.visibility_of_element_located((By.CLASS_NAME, "shopping_cart_badge"))
     )
     assert cart_badge.text == "1", f"❌ Esperado: 1, obtenido: {cart_badge.text}"
-
-    # Pausa extra para observar el badge
     time.sleep(1.5)
 
     # Ir al carrito
     driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
-
-    # Pausa para ver la transición
     time.sleep(1.5)
 
     # Validar que el producto esté en el carrito
@@ -76,6 +66,13 @@ def test_cart_flow(driver):
     )
     assert cart_item.is_displayed(), "❌ El producto no aparece en el carrito"
 
-    print("✅ Test completado correctamente: producto agregado y visible en el carrito.")
+    # Validar nombre del item
+    cart_item_name = cart_item.find_element(By.CLASS_NAME, "inventory_item_name").text
+    assert cart_item_name == "Sauce Labs Backpack", f"❌ Nombre del producto incorrecto: {cart_item_name}"
 
+    # Validar precio del item
+    cart_item_price = cart_item.find_element(By.CLASS_NAME, "inventory_item_price").text
+    assert cart_item_price == "$29.99", f"❌ Precio del producto incorrecto: {cart_item_price}"
+
+    print("✅ Test completado correctamente: producto agregado y visible en el carrito.")
 
