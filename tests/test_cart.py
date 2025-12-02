@@ -5,8 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+<<<<<<< HEAD:tests/test_cart.py
 from utils import perform_login, is_element_present
 from utils import login
+=======
+
+# IMPORT CORREGIDO: apuntar al módulo dentro de la carpeta utils
+from utils.utils import perform_login, is_element_present, login
+>>>>>>> 491e526 (cambios):preentrega-yesica-moreno-10/tests/test_cart.py
 
 @pytest.fixture
 def driver():
