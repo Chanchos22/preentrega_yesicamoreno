@@ -1,0 +1,77 @@
+2025-12-04 18:26:51 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 18:26:57 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 18:27:02 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 21:27:45 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 21:27:51 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 21:27:57 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 21:29:42 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 21:29:48 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 21:29:53 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 21:44:45 INFO TalentoTech: Relizando la solitud GET a https://reqres.in/api/users 
+2025-12-04 21:44:49 INFO TalentoTech: Status code: 401
+2025-12-04 21:47:14 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 21:47:20 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 21:47:27 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 21:49:38 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 21:49:38 INFO TalentoTech: Status code: 403
+2025-12-04 21:49:38 INFO TalentoTech: Realizando POST a https://reqres.in/api/users con payload {'name': 'Jose', 'job': 'Profesor'}
+2025-12-04 21:49:39 INFO TalentoTech: Realizando DELETE a https://reqres.in/api/users/2
+2025-12-04 21:52:59 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 21:52:59 INFO TalentoTech: Status code: 403
+2025-12-04 21:52:59 INFO TalentoTech: Realizando POST a https://reqres.in/api/users con payload {'name': 'Jose', 'job': 'Profesor'}
+2025-12-04 21:52:59 INFO TalentoTech: Status code: 403
+2025-12-04 21:52:59 INFO TalentoTech: Realizando DELETE a https://reqres.in/api/users/2
+2025-12-04 21:53:00 INFO TalentoTech: Status code: 403
+2025-12-04 21:59:13 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 21:59:13 INFO TalentoTech: Status code recibido: 401
+2025-12-04 21:59:13 INFO TalentoTech: Enviando solicitud POST para crear usuario
+2025-12-04 21:59:14 INFO TalentoTech: Enviando solicitud DELETE para eliminar usuario 2
+2025-12-04 21:59:15 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 21:59:15 INFO TalentoTech: Status code: 403
+2025-12-04 21:59:15 INFO TalentoTech: Realizando POST a https://reqres.in/api/users con payload {'name': 'Jose', 'job': 'Profesor'}
+2025-12-04 21:59:15 INFO TalentoTech: Status code: 403
+2025-12-04 21:59:15 INFO TalentoTech: Realizando DELETE a https://reqres.in/api/users/2
+2025-12-04 21:59:16 INFO TalentoTech: Status code: 403
+2025-12-04 22:01:39 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 22:01:44 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 22:01:50 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 22:07:31 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 22:07:32 INFO TalentoTech: Status code recibido: 401
+2025-12-04 22:07:32 INFO TalentoTech: Enviando solicitud POST para crear usuario
+2025-12-04 22:07:33 INFO TalentoTech: Enviando solicitud DELETE para eliminar usuario 2
+2025-12-04 22:07:33 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 22:07:34 INFO TalentoTech: Status code: 403
+2025-12-04 22:07:34 INFO TalentoTech: Realizando POST a https://reqres.in/api/users con payload {'name': 'Jose', 'job': 'Profesor'}
+2025-12-04 22:07:34 INFO TalentoTech: Status code: 403
+2025-12-04 22:07:34 INFO TalentoTech: Realizando DELETE a https://reqres.in/api/users/2
+2025-12-04 22:07:34 INFO TalentoTech: Status code: 403
+2025-12-04 22:10:09 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 22:10:14 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 22:10:20 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 22:11:41 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 22:11:41 INFO TalentoTech: Status code: 403
+2025-12-04 22:11:41 INFO TalentoTech: Realizando POST a https://reqres.in/api/users con payload {'name': 'Jose', 'job': 'Profesor'}
+2025-12-04 22:11:41 INFO TalentoTech: Status code: 403
+2025-12-04 22:11:41 INFO TalentoTech: Realizando DELETE a https://reqres.in/api/users/2
+2025-12-04 22:11:42 INFO TalentoTech: Status code: 403
+2025-12-04 22:14:05 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 22:14:10 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 22:14:16 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-04 22:17:03 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users/2
+2025-12-04 22:17:03 INFO TalentoTech: Status code: 403
+2025-12-04 22:17:03 INFO TalentoTech: Realizando POST a https://reqres.in/api/users con payload {'name': 'Jose', 'job': 'Profesor'}
+2025-12-04 22:17:04 INFO TalentoTech: Status code: 403
+2025-12-04 22:17:04 INFO TalentoTech: Realizando DELETE a https://reqres.in/api/users/2
+2025-12-04 22:17:04 INFO TalentoTech: Status code: 403
+2025-12-04 22:19:27 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-04 22:19:32 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-04 22:19:38 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-05 08:52:30 INFO TalentoTech: GET → https://postman-echo.com/get?foo=bar
+2025-12-05 08:52:31 INFO TalentoTech: POST → https://postman-echo.com/post
+2025-12-05 08:52:31 INFO TalentoTech: DELETE → https://postman-echo.com/delete
+2025-12-05 08:52:56 INFO TalentoTech: GET → https://postman-echo.com/get?foo=bar
+2025-12-05 08:52:57 INFO TalentoTech: POST → https://postman-echo.com/post
+2025-12-05 08:52:57 INFO TalentoTech: DELETE → https://postman-echo.com/delete
+2025-12-05 08:55:21 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-05 08:55:27 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-05 08:55:32 INFO TalentoTech: Completando con los datos del usuario: problem_user

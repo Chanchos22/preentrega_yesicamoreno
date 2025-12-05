@@ -5,11 +5,27 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from utils import perform_login, is_element_present
-from utils import login
+
+# IMPORTACIONES LIMPIAS
+# Asumimos que InventoryPage y CartPage están en la carpeta 'pages'
+from pages.inventory_page import InventoryPage 
+# Si tu código necesita estas funciones, deben estar consolidadas en utils/__init__.py
+# from utils import perform_login, is_element_present 
+# Si usas la fixture login_in_driver, no necesitas las funciones de login aquí.
+
+
+# Si esta clase es parte del Page Object Model, debería estar en pages/
+# Si solo es una definición temporal, déjala en el archivo de prueba.
+class TestCartFlow: 
+    # Esta fixture DEBE estar fuera de la clase si se usa en el test_cart_flow,
+    # o DEBE ser un método estático si va dentro de la clase,
+    # pero para Pytest es más sencillo dejarla al nivel del módulo o en conftest.py.
+    pass
+
 
 @pytest.fixture
 def driver():
+    """Configura y devuelve la instancia del WebDriver."""
     chrome_opt = Options()
     chrome_opt.add_argument("--incognito")
     chrome_opt.add_argument("--disable-popup-blocking")
@@ -18,10 +34,12 @@ def driver():
     yield driver
     driver.quit()
 
-def test_cart_flow(driver):
-    driver.get("https://www.saucedemo.com/")
 
+def test_cart_flow(driver):
+    """Prueba el flujo de login, añadir un producto y verificar el carrito."""
+    
     # --- LOGIN ---
+    driver.get("https://www.saucedemo.com/")
     WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "user-name")))
     driver.find_element(By.ID, "user-name").send_keys("standard_user")
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
@@ -33,13 +51,14 @@ def test_cart_flow(driver):
     )
     time.sleep(1.5)
 
-    # Localizar el botón del producto "Sauce Labs Backpack"
+    # Localizar y hacer scroll al botón
     add_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack"))
     )
     driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", add_button)
     time.sleep(1.5)
 
+    # Click con manejo de errores
     try:
         add_button.click()
         print("🖱️ Click normal exitoso")
