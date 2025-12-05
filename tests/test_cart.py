@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+<<<<<<< HEAD
 
 # IMPORTACIONES LIMPIAS
 # Asumimos que InventoryPage y CartPage están en la carpeta 'pages'
@@ -22,6 +23,16 @@ class TestCartFlow:
     # pero para Pytest es más sencillo dejarla al nivel del módulo o en conftest.py.
     pass
 
+=======
+<<<<<<< HEAD:tests/test_cart.py
+from utils import perform_login, is_element_present
+from utils import login
+=======
+
+# IMPORT CORREGIDO: apuntar al módulo dentro de la carpeta utils
+from utils.utils import perform_login, is_element_present, login
+>>>>>>> 491e526 (cambios):preentrega-yesica-moreno-10/tests/test_cart.py
+>>>>>>> a2c65a09c0961e3609ab7da98c0dc36e458a7f9c
 
 @pytest.fixture
 def driver():
