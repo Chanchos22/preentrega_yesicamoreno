@@ -1,11 +1,10 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-<<<<<<< HEAD:tests/test_login.py
 import pytest
 from selenium.webdriver.chrome.options import Options
 from pages.login_page import LoginPage
 from utils.datos import leer_csv_login
-from utils.logger import logger   # ✅ IMPORTACIÓN CORRECTA
+from utils.logger import logger   # Importación correcta
 
 # --- FIXTURE ---
 
@@ -20,25 +19,8 @@ def driver():
     driver.maximize_window()
     yield driver
     driver.quit()
-=======
-import pytest 
-
-from utils.datos import leer_csv_login
-from pages.login_page import LoginPage
 
 
-@pytest.mark.parametrize("usuario,password,debe_funcionar",leer_csv_login("datos/data_login.csv"))
-def test_login_validation(login_in_driver,usuario,password,debe_funcionar):
-    driver = login_in_driver
-    print(debe_funcionar)
-    if debe_funcionar == 'True':
-        assert "/inventory.html" in driver.current_url, "No se redirgio al inventario"
-    elif debe_funcionar == 'False':
-        mensaje_error = LoginPage(driver).obtener_error()
-        assert "Epic sadface" in mensaje_error, "el mensaje de error no se esta mostrando"
->>>>>>> 491e526 (cambios):preentrega-yesica-moreno-10/tests/test_login.py
-
-<<<<<<< HEAD
 # --- PRUEBA ---
 
 @pytest.mark.parametrize("usuario,password,debe_funcionar", leer_csv_login("datos/data_login.csv"))
@@ -63,10 +45,5 @@ def test_login_validation(driver, usuario, password, debe_funcionar):
         mensaje_error = LoginPage(driver).obtener_error()
         assert "Epic sadface" in mensaje_error, "El mensaje de error no se está mostrando correctamente"
         logger.info("Test de login fallido completado")
-=======
-
->>>>>>> a2c65a09c0961e3609ab7da98c0dc36e458a7f9c
-
-
 
 

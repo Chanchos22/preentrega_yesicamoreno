@@ -7,6 +7,7 @@ test_files = [
     "tests/test_cart.py",
     "tests/test_cart2.py",
     "tests/test_cart_json.py",
+    "tests/test_api_reqres.py"
 =======
 <<<<<<< HEAD:run_tests.py
     "test_login.py",
