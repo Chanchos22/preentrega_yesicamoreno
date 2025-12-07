@@ -93,3 +93,9 @@
 2025-12-07 18:45:55 INFO TalentoTech: Completando con los datos del usuario: standard_user
 2025-12-07 18:46:00 INFO TalentoTech: Completando con los datos del usuario: admin
 2025-12-07 18:46:06 INFO TalentoTech: Completando con los datos del usuario: problem_user
+2025-12-07 19:06:01 INFO TalentoTech: GET → https://postman-echo.com/get?foo=bar
+2025-12-07 19:06:02 INFO TalentoTech: POST → https://postman-echo.com/post
+2025-12-07 19:06:03 INFO TalentoTech: DELETE → https://postman-echo.com/delete
+2025-12-07 19:08:18 INFO TalentoTech: Completando con los datos del usuario: standard_user
+2025-12-07 19:08:23 INFO TalentoTech: Completando con los datos del usuario: admin
+2025-12-07 19:08:28 INFO TalentoTech: Completando con los datos del usuario: problem_user
