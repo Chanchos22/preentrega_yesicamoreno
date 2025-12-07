@@ -1,134 +1,209 @@
-🧪 Proyecto de Automatización – SauceDemo
+Proyecto de Talento Tech
+Proposito del proyecto
 
-Automatización de pruebas UI y API utilizando Python, Pytest y Selenium, aplicando buenas prácticas como Page Object Model (POM), manejo de datos externos, reportes HTML, logs y captura automática de pantallas.
+Este proyecto tiene como objetivo automatizar pruebas de UI y API para el sitio SauceDemo, aplicando buenas prácticas como:
 
-🎯 Propósito del Proyecto
+Page Object Model (POM)
 
-Este proyecto tiene como objetivo automatizar el flujo crítico de un usuario en el e-commerce de demostración SauceDemo, validando funcionalidades esenciales y asegurando la calidad del sistema.
+Manejo de datos externos
 
-Incluye pruebas obligatorias como:
+Generación de reportes HTML
 
-🔐 Login exitoso y fallido
+Logging centralizado
 
-🔐 Login usando datos Faker (datos aleatorios)
+Captura automática de pantallas para pruebas fallidas
 
-📦 Validación del catálogo de productos (presencia, nombre, precio)
+Tecnologías utilizadas
 
-🛒 Interacción con el carrito (agregar productos + verificación final)
+Python 3.x
 
-🌐 Pruebas API (Reqres):
+Pytest
 
-GET Users
+Selenium WebDriver
 
-POST Create User
+Requests
 
-DELETE User
+Logging
 
-Validación de códigos HTTP
+Faker
 
-Validación de estructura JSON
+CSV / JSON
 
-💻 Tecnologías Utilizadas
-Tecnología	Descripción
-Python 3.x	Lenguaje de programación principal
-Pytest	Ejecución y estructura de pruebas
-Selenium WebDriver	Automatización UI del navegador
-WebDriver Manager	Descarga automática de drivers
-Faker	Generación de datos aleatorios
-CSV / JSON	Datos externos para pruebas
-Requests	Automatización de API
-Git & GitHub	Control de versiones
-📁 Estructura del Proyecto
-preentrega_yesicamoreno/
-│── datos/
+Estructura del Proyecto
+preentrega-yesica-moreno-10/
+│
+├── datos/
 │   ├── data_login.csv
 │   └── productos.json
-│── logs/
+│
+├── logs/
 │   └── suite.log
-│── reports/
-│   └── screens/  (screenshots de fallas)
-│── tests/
-│── pages/
-│── run_test.py
-│── README.md
+│
+├── pages/
+│   ├── base_page.py
+│   ├── inventory_page.py
+│   ├── login_page.py
+│   ├── cart_page.py
+│   └── api_page.py
+│
+├── reports/
+│   └── screens/   (capturas de pantalla de tests fallidos)
+│
+├── tests/
+│   ├── test_login.py
+│   ├── test_inventory.py
+│   ├── test_cart.py
+│   └── test_api.py
+│
+├── run_test.py
+└── README.md
 
-📝 Reportes y Logs Generados
-📄 Reporte HTML
+Reportes y Logs
 
-Se genera automáticamente al ejecutar la suite.
-📍 Ubicación: reports/reporte.html
+El proyecto genera tres tipos de resultados durante la ejecución:
+
+📄 1. Reporte HTML
+
+Se genera automáticamente con el nombre:
+
+reporte.html
+
+
+Ubicación: carpeta raíz del proyecto.
 
 Incluye:
 
-Lista de pruebas ejecutadas
+Lista completa de tests ejecutados
 
-Estado (passed / failed)
+Estado de cada prueba
 
-Duración
+Duración total y por test
 
-Capturas de pantalla (para fallas)
+Capturas de pantalla de pruebas fallidas
 
-🖼️ Capturas de pantalla
+📝 2. Logs de ejecución
 
-Se guardan al fallar una prueba.
-📍 Ubicación: reports/screens/
+Ubicación:
 
-📜 Logs de ejecución
+logs/suite.log
 
-📍 Ubicación: logs/suite.log
-Contiene detalle completo de cada acción ejecutada.
 
-⚙️ Instalación de Dependencias
+Contiene:
 
-Ejecutar:
+Inicio y fin de la suite
 
-py -m pip install pytest
-py -m pip install selenium webdriver-manager pytest-html
-py -m pip install faker requests
+Pasos ejecutados
 
-🚀 Cómo Ejecutar Todas las Pruebas
-✔️ Opción 1 — Ejecutar con archivo principal
+Errores detectados
 
-Desde la carpeta raíz:
+Información útil para depuración
 
+📸 3. Capturas de pantalla
+
+Se generan solo cuando un test falla.
+
+Ubicación:
+
+reports/screens/
+
+Cómo ejecutar las pruebas
+▶️ Ejecutar TODAS las pruebas usando el script principal
 python -m run_test.py
 
-✔️ Opción 2 — Ejecutar usando Pytest + generación de reporte
-pytest --html=reports/reporte.html --self-contained-html -v
+▶️ Ejecutar con Pytest directamente
+Todas las pruebas:
+pytest -v
 
-Detalles del comando:
+Un archivo específico:
+pytest -v tests/test_login.py
 
--v → modo verbose (muestra cada test)
+Con reporte HTML:
+pytest --html=reporte.html --self-contained-html
 
---html= → genera reporte HTML
+¿Cómo interpretar los reportes?
 
-Pytest detecta automáticamente todos los archivos test_ dentro de /tests
+Al finalizar la ejecución:
 
-✔️ Ejecutar un test específico
+Se genera reporte.html en la raíz
 
-Ejemplo:
+Se actualiza logs/suite.log
 
-pytest -v --html=reports/reporte.html tests/test_saucedemo.py
+Se guardan capturas de pantalla en reports/screens/
 
-📦 Manejo de Datos Externos
+El reporte HTML muestra:
 
-El proyecto utiliza datos para pruebas desde:
+Estado de las pruebas
 
-CSV → usuarios válidos/ inválidos (data_login.csv)
+Tiempo por test
 
-JSON → productos para validar (productos.json)
+Errores y traceback
 
-Esto permite escalar el proyecto sin modificar el código principal.
+Capturas de fallos
 
-🧠 Conclusión
+Pruebas incluidas
+🔐 Login
 
-Este proyecto está diseñado con una arquitectura escalable y mantenible, utilizando buenas prácticas de automatización:
+Login exitoso
 
-✅ Page Object Model
-✅ Datos externos
-✅ Reportes HTML
-✅ Logs
-✅ Captura automática de pantallas
-✅ Flujo de ejecución simple con run_test.py
+Login fallido
 
-Permite agregar nuevos casos de prueba sin alterar la estructura base.
+Login usando Faker
+
+📦 Inventario
+
+Validación de productos
+
+Agregar productos al carrito
+
+Verificaciones de UI en inventario
+
+🛒 Carrito
+
+Agregar y remover productos
+
+Validaciones de cantidades
+
+Flujo de compra parcial
+
+🌐 API – Reqres.in
+
+GET /users
+
+POST /users
+
+DELETE /users/{id}
+
+Validaciones:
+
+Códigos HTTP
+
+Estructura JSON
+
+Campos obligatorios
+
+Manejo de datos de prueba
+
+Ubicados en la carpeta datos/:
+
+Archivo	Uso
+data_login.csv	Usuarios válidos e inválidos para login test
+productos.json	Información de productos para validaciones
+Conclusión
+
+Este proyecto ofrece una arquitectura ordenada, escalable y profesional, aplicando buenas prácticas de automatización con Python y Pytest.
+
+Incluye:
+
+Flujo de ejecución simple (run_test.py)
+
+Reportes HTML automáticos
+
+Logging centralizado
+
+Screenshots
+
+Page Object Model
+
+Pruebas UI y API
+
+La estructura permite agregar nuevas pruebas y funciones sin modificar el núcleo del proyecto, asegurando mantenibilidad y crecimiento en el tiempo.
