@@ -1,80 +1,134 @@
-Pre-Entrega de Proyecto: Automatización en SauceDemo
-<<<<<<< HEAD:README.md
+🧪 Proyecto de Automatización – SauceDemo
+
+Automatización de pruebas UI y API utilizando Python, Pytest y Selenium, aplicando buenas prácticas como Page Object Model (POM), manejo de datos externos, reportes HTML, logs y captura automática de pantallas.
+
 🎯 Propósito del Proyecto
 
-Este proyecto tiene como objetivo automatizar el flujo crítico de un usuario en el sitio web de demostración de e-commerce SauceDemo.
+Este proyecto tiene como objetivo automatizar el flujo crítico de un usuario en el e-commerce de demostración SauceDemo, validando funcionalidades esenciales y asegurando la calidad del sistema.
 
-La automatización verifica los siguientes casos de prueba obligatorios:
+Incluye pruebas obligatorias como:
 
-Login Exitoso: Navegación, ingreso de credenciales válidas y validación de la redirección al inventario.
+🔐 Login exitoso y fallido
 
-Verificación del Catálogo: Validación de la presencia de productos y listado de sus detalles (nombre y precio).
+🔐 Login usando datos Faker (datos aleatorios)
 
-Interacción con Carrito: Adición de un producto al carrito y verificación de su aparición en la vista final del carrito.
+📦 Validación del catálogo de productos (presencia, nombre, precio)
+
+🛒 Interacción con el carrito (agregar productos + verificación final)
+
+🌐 Pruebas API (Reqres):
+
+GET Users
+
+POST Create User
+
+DELETE User
+
+Validación de códigos HTTP
+
+Validación de estructura JSON
 
 💻 Tecnologías Utilizadas
 Tecnología	Descripción
-Python	Lenguaje de programación principal.
-Pytest	Framework para la estructura, gestión y ejecución de pruebas.
-Selenium WebDriver	Herramienta para la automatización de la interfaz del navegador.
-webdriver-manager	Gestiona y descarga automáticamente el driver de Chrome.
-Git & GitHub	Control de versiones y alojamiento del repositorio.
+Python 3.x	Lenguaje de programación principal
+Pytest	Ejecución y estructura de pruebas
+Selenium WebDriver	Automatización UI del navegador
+WebDriver Manager	Descarga automática de drivers
+Faker	Generación de datos aleatorios
+CSV / JSON	Datos externos para pruebas
+Requests	Automatización de API
+Git & GitHub	Control de versiones
+📁 Estructura del Proyecto
+preentrega_yesicamoreno/
+│── datos/
+│   ├── data_login.csv
+│   └── productos.json
+│── logs/
+│   └── suite.log
+│── reports/
+│   └── screens/  (screenshots de fallas)
+│── tests/
+│── pages/
+│── run_test.py
+│── README.md
 
-1- 🛠️ Instalación de Dependencias
+📝 Reportes y Logs Generados
+📄 Reporte HTML
 
-Para ejecutar las pruebas, se recomienda instalar las librerías necesarias mediante pip:
+Se genera automáticamente al ejecutar la suite.
+📍 Ubicación: reports/reporte.html
+
+Incluye:
+
+Lista de pruebas ejecutadas
+
+Estado (passed / failed)
+
+Duración
+
+Capturas de pantalla (para fallas)
+
+🖼️ Capturas de pantalla
+
+Se guardan al fallar una prueba.
+📍 Ubicación: reports/screens/
+
+📜 Logs de ejecución
+
+📍 Ubicación: logs/suite.log
+Contiene detalle completo de cada acción ejecutada.
+
+⚙️ Instalación de Dependencias
+
+Ejecutar:
+
 py -m pip install pytest
-
-2- Instalar Selenium, WebDriver Manager y Pytest-HTML:
 py -m pip install selenium webdriver-manager pytest-html
+py -m pip install faker requests
 
-🚀 Cómo Ejecutar las Pruebas
+🚀 Cómo Ejecutar Todas las Pruebas
+✔️ Opción 1 — Ejecutar con archivo principal
 
-3- Ejecutar la suite completa de pruebas y generar el reporte final desde la carpeta principal del proyecto (Entrega-automation-proyecto):
+Desde la carpeta raíz:
+
+python -m run_test.py
+
+✔️ Opción 2 — Ejecutar usando Pytest + generación de reporte
 pytest --html=reports/reporte.html --self-contained-html -v
 
-4- Detalles del comando:
+Detalles del comando:
 
--v : Muestra el nombre de cada prueba mientras se ejecuta (Verbose).
+-v → modo verbose (muestra cada test)
 
---html=... : Genera un reporte HTML y especifica la ruta donde guardarlo.
+--html= → genera reporte HTML
 
-Pytest buscará automáticamente todos los archivos de prueba que comiencen con test_ dentro de la carpeta tests/.
+Pytest detecta automáticamente todos los archivos test_ dentro de /tests
 
-Archivo de prueba específico :
-Si se desea ejecutar un archivo en particular:
+✔️ Ejecutar un test específico
+
+Ejemplo:
+
 pytest -v --html=reports/reporte.html tests/test_saucedemo.py
 
-5- 📄 Generación de Reporte en HTML
+📦 Manejo de Datos Externos
 
-El reporte con los resultados detallados de la ejecución se generará automáticamente al finalizar las pruebas y estará disponible en:
-reports/reporte.html
+El proyecto utiliza datos para pruebas desde:
 
-=======
+CSV → usuarios válidos/ inválidos (data_login.csv)
 
-🎯 Propósito del Proyecto Este proyecto tiene como objetivo automatizar el flujo crítico de un usuario en el sitio web de demostración de e-commerce SauceDemo.
+JSON → productos para validar (productos.json)
 
-La automatización verifica los siguientes casos de prueba obligatorios:
+Esto permite escalar el proyecto sin modificar el código principal.
 
-Login Exitoso: Navegación, ingreso de credenciales válidas, y validación de la redirección al inventario.
+🧠 Conclusión
 
-Verificación del Catálogo: Validación de la presencia de productos y listado de sus detalles.
+Este proyecto está diseñado con una arquitectura escalable y mantenible, utilizando buenas prácticas de automatización:
 
-Interacción con Carrito: Adición de un producto al carrito y verificación de su aparición en la vista final del carrito.
+✅ Page Object Model
+✅ Datos externos
+✅ Reportes HTML
+✅ Logs
+✅ Captura automática de pantallas
+✅ Flujo de ejecución simple con run_test.py
 
-💻 Tecnologías Utilizadas Tecnología Descripción Python Lenguaje de programación principal. Pytest Framework para la estructura, gestión y ejecución de las pruebas. Selenium WebDriver Herramienta para la automatización de la interfaz del navegador. webdriver-manager Utilizado para gestionar y descargar automáticamente el driver de Chrome. Git & GitHub Usado para control de versiones y alojamiento del repositorio.
-
-🛠️ Cómo Instalar las Dependencias Para ejecutar las pruebas, debes usar el método de instalación de paquetes de Python (pip) para asegurar que todas las librerías necesarias estén disponibles.
-
-1- Instalar Pytest: py -m pip install pytest
-
-2- Instalar Selenium, WebDriver Manager, y Pytest-HTML: py -m pip install selenium webdriver-manager pytest-html
-
-3- Cómo Ejecutar las Pruebas Para ejecutar la suite completa de pruebas y generar el reporte final, usa el siguiente comando. Este comando le indica a Pytest que debe buscar los tests en la carpeta y archivo especificados.
-
-4- Ejecutar los Tests y Generar Reporte Ejecuta el comando desde la carpeta principal (Entrega-automation-proyecto): pytest --html=report.html --self-contained-html -v
-
-5- Detalles del Comando -v: (Verbose) Muestra el nombre de cada prueba mientras se ejecuta. --html=...: Genera el reporte HTML y especifica la ruta donde guardarlo. pre-entrega/tests/test_saucedemo.py: Ruta del archivo de prueba a ejecutar.
-
-6- Generar Reporte en HTML El reporte con los resultados detallados de la ejecución se generará automáticamente tras correr el comando anterior y estará disponible en la siguiente ubicación: Ubicación del Archivo: pre-entrega/reports/reporte.html py -m pytest -v --html=pre-entrega/reports/reporte.html pre-entrega/tests/test_saucedemo.py
->>>>>>> 491e526 (cambios):preentrega-yesica-moreno-10/README.md
+Permite agregar nuevos casos de prueba sin alterar la estructura base.
